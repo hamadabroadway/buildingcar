@@ -1,8 +1,9 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/buildingcar/public_html/
+    - export DEPLOYPATH=$HOME/public_html/
+    - /bin/mkdir -p $DEPLOYPATH/images
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
     - /bin/cp script.js $DEPLOYPATH
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R images/ $DEPLOYPATH/images/

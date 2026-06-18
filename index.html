@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building Car — Location de Voitures de Prestige</title>
+  <meta name="description" content="Louez les meilleures voitures de luxe au Maroc. Réservation simple et rapide via WhatsApp." />
+
+  <!-- Performance : préchargement critique -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Seuls les graisses utilisées : 400,600,700,800 -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Précharger le fond et le logo (ressources above-the-fold) -->
+  <link rel="preload" as="image" href="images/g63-bg.jpg" />
+  <link rel="preload" as="image" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#accueil" class="header__logo">
+        <img src="images/logo.png" alt="Building Car" />
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#accueil"   class="nav__link">Accueil</a></li>
+          <li><a href="#vehicules" class="nav__link">Nos voitures</a></li>
+          <li><a href="#reservation" class="nav__link">Réserver</a></li>
+          <li><a href="#contact"   class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#reservation" class="btn btn--primary header__cta">Réserver</a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="accueil">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content fade-in">
+      <span class="hero__badge">Location Premium au Maroc</span>
+      <h1 class="hero__title">Conduisez<br /><span>l'Exceptionnel</span></h1>
+      <p class="hero__subtitle">Flotte de véhicules haut de gamme, disponible 7j/7 — livraison à votre porte incluse.</p>
+      <div class="hero__actions">
+        <a href="#reservation" class="btn btn--primary btn--lg">Réserver maintenant</a>
+        <a href="#vehicules"   class="btn btn--ghost btn--lg">Voir nos voitures</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ========== NOS VÉHICULES ========== -->
+  <section class="section vehicles" id="vehicules">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__tag">Notre flotte</span>
+        <h2 class="section__title">Nos Véhicules</h2>
+        <p class="section__sub">Chaque voiture est soigneusement entretenue et assurée tous risques.</p>
+      </div>
+
+      <!-- ============================================================
+           LISTE DES VOITURES — modifiez ici pour ajouter / changer
+           un véhicule : dupliquez une .car-card et ajustez les attributs
+           data-car (valeur du menu déroulant), data-price et l'image.
+      ============================================================ -->
+      <div class="cars-grid">
+
+        <!-- Voiture 1 : Range Rover Sport -->
+        <div class="car-card fade-in" data-car="Range Rover Sport" data-price="2500">
+          <div class="car-card__img-wrap">
+            <img src="images/range-rover.jpg" alt="Range Rover Sport" loading="lazy" />
+            <span class="car-card__badge car-card__badge--gold">Premium</span>
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Range Rover Sport</h3>
+            <p class="car-card__specs">V8 · 525 ch · SUV de luxe</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>2 500 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 2 : VW Touareg -->
+        <div class="car-card fade-in" data-car="Volkswagen Touareg" data-price="1500">
+          <div class="car-card__img-wrap">
+            <img src="images/touareg.jpg" alt="Volkswagen Touareg" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Volkswagen Touareg</h3>
+            <p class="car-card__specs">V6 · 286 ch · SUV premium</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>1 500 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 3 : Cupra Formentor -->
+        <div class="car-card fade-in" data-car="Cupra Formentor" data-price="1200">
+          <div class="car-card__img-wrap">
+            <img src="images/cupra-formentor.jpg" alt="Cupra Formentor" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Cupra Formentor</h3>
+            <p class="car-card__specs">2.0 TSI · 310 ch · SUV sportif</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>1 200 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 4 : Kia Sportage GT -->
+        <div class="car-card fade-in" data-car="Kia Sportage GT" data-price="700">
+          <div class="car-card__img-wrap">
+            <img src="images/sportage.jpg" alt="Kia Sportage GT" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Kia Sportage GT</h3>
+            <p class="car-card__specs">1.6 T-GDi · 180 ch · SUV sport</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>700 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 5 : Hyundai Tucson -->
+        <div class="car-card fade-in" data-car="Hyundai Tucson" data-price="600">
+          <div class="car-card__img-wrap">
+            <img src="images/hyundai-tucson.jpg" alt="Hyundai Tucson" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Hyundai Tucson</h3>
+            <p class="car-card__specs">1.6 CRDi · 136 ch · SUV familial</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>600 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 6 : Seat Ibiza -->
+        <div class="car-card fade-in" data-car="Seat Ibiza" data-price="500">
+          <div class="car-card__img-wrap">
+            <img src="images/seat-ibiza.jpg" alt="Seat Ibiza" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Seat Ibiza</h3>
+            <p class="car-card__specs">1.0 TSI · 95 ch · Citadine dynamique</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>500 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 7 : Renault Express -->
+        <div class="car-card fade-in" data-car="Renault Express" data-price="450">
+          <div class="car-card__img-wrap">
+            <img src="images/RENAULT_Express.jpg" alt="Renault Express" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Renault Express</h3>
+            <p class="car-card__specs">1.5 dCi · 75 ch · Utilitaire / Familial</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>450 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 8 : Renault Clio 5 -->
+        <div class="car-card fade-in" data-car="Renault Clio 5" data-price="350">
+          <div class="car-card__img-wrap">
+            <img src="images/clio.jpg" alt="Renault Clio 5" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Renault Clio 5</h3>
+            <p class="car-card__specs">1.0 TCe · 90 ch · Citadine moderne</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>350 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 9 : Opel Corsa -->
+        <div class="car-card fade-in" data-car="Opel Corsa" data-price="350">
+          <div class="car-card__img-wrap">
+            <img src="images/opel-corsa.jpg" alt="Opel Corsa" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Opel Corsa</h3>
+            <p class="car-card__specs">1.2 · 75 ch · Citadine compacte</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>350 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 10 : Peugeot 208 -->
+        <div class="car-card fade-in" data-car="Peugeot 208" data-price="350">
+          <div class="car-card__img-wrap">
+            <img src="images/peugeot-208.jpg" alt="Peugeot 208" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Peugeot 208</h3>
+            <p class="car-card__specs">1.2 PureTech · 100 ch · Citadine</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>350 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 11 : Hyundai i10 Automatique -->
+        <div class="car-card fade-in" data-car="Hyundai i10 Automatique" data-price="350">
+          <div class="car-card__img-wrap">
+            <img src="images/i10.jpg" alt="Hyundai i10 Automatique" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Hyundai i10 Automatique</h3>
+            <p class="car-card__specs">1.0 · 67 ch · Boîte auto · Citadine</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>350 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 12 : Dacia Sandero -->
+        <div class="car-card fade-in" data-car="Dacia Sandero" data-price="300">
+          <div class="car-card__img-wrap">
+            <img src="images/sandero.jpg" alt="Dacia Sandero" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Dacia Sandero</h3>
+            <p class="car-card__specs">1.0 SCe · 65 ch · Économique</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>300 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voiture 13 : Dacia Logan -->
+        <div class="car-card fade-in" data-car="Dacia Logan" data-price="300">
+          <div class="car-card__img-wrap">
+            <img src="images/dacia-logan.jpg" alt="Dacia Logan" loading="lazy" />
+          </div>
+          <div class="car-card__body">
+            <h3 class="car-card__name">Dacia Logan</h3>
+            <p class="car-card__specs">1.0 SCe · 65 ch · Berline économique</p>
+            <div class="car-card__footer">
+              <span class="car-card__price"><strong>300 MAD</strong> / jour</span>
+              <button class="btn btn--primary btn--sm book-btn">Réserver</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cars-grid -->
+    </div>
+  </section>
+
+  <!-- ========== POURQUOI NOUS ========== -->
+  <section class="section why" id="pourquoi">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__tag">Nos engagements</span>
+        <h2 class="section__title">Pourquoi Nous Choisir ?</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why__card fade-in">
+          <div class="why__icon">🛡️</div>
+          <h3>Assurance Tous Risques</h3>
+          <p>Chaque véhicule est couvert en tous risques, sans franchise cachée. Vous roulez l'esprit tranquille.</p>
+        </div>
+        <div class="why__card fade-in">
+          <div class="why__icon">🚗</div>
+          <h3>Livraison à Votre Porte</h3>
+          <p>Nous livrons la voiture où vous le souhaitez — hôtel, aéroport, domicile — dans tout le Maroc.</p>
+        </div>
+        <div class="why__card fade-in">
+          <div class="why__icon">💎</div>
+          <h3>Prix Transparents</h3>
+          <p>Aucun frais caché. Le prix affiché est le prix final. Vous savez exactement ce que vous payez.</p>
+        </div>
+        <div class="why__card fade-in">
+          <div class="why__icon">📞</div>
+          <h3>Support 24h/24 — 7j/7</h3>
+          <p>Une question, un problème ? Notre équipe est joignable à toute heure via WhatsApp ou téléphone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FORMULAIRE DE RÉSERVATION ========== -->
+  <section class="section reservation" id="reservation">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__tag">Simple & rapide</span>
+        <h2 class="section__title">Réserver en 1 Minute</h2>
+        <p class="section__sub">Remplissez le formulaire ci-dessous. Un conseiller vous confirme sous 15 min via WhatsApp.</p>
+      </div>
+      <div class="reservation__wrap fade-in">
+        <form class="res-form" id="reservationForm" novalidate>
+
+          <!-- Nom complet -->
+          <div class="form-group">
+            <label for="res-name">Nom complet <span class="req">*</span></label>
+            <input type="text" id="res-name" name="name" placeholder="Votre nom et prénom" required />
+          </div>
+
+          <!-- Téléphone -->
+          <div class="form-group">
+            <label for="res-phone">Téléphone <span class="req">*</span></label>
+            <input type="tel" id="res-phone" name="phone" placeholder="+212 6XX XXX XXX" required />
+          </div>
+
+          <!-- Voiture choisie -->
+          <div class="form-group">
+            <label for="res-car">Voiture choisie <span class="req">*</span></label>
+            <select id="res-car" name="car" required>
+              <option value="">— Sélectionnez un véhicule —</option>
+              <option value="Range Rover Sport">Range Rover Sport — 2 500 MAD/j</option>
+              <option value="Volkswagen Touareg">Volkswagen Touareg — 1 500 MAD/j</option>
+              <option value="Cupra Formentor">Cupra Formentor — 1 200 MAD/j</option>
+              <option value="Kia Sportage GT">Kia Sportage GT — 700 MAD/j</option>
+              <option value="Hyundai Tucson">Hyundai Tucson — 600 MAD/j</option>
+              <option value="Seat Ibiza">Seat Ibiza — 500 MAD/j</option>
+              <option value="Renault Express">Renault Express — 450 MAD/j</option>
+              <option value="Renault Clio 5">Renault Clio 5 — 350 MAD/j</option>
+              <option value="Opel Corsa">Opel Corsa — 350 MAD/j</option>
+              <option value="Peugeot 208">Peugeot 208 — 350 MAD/j</option>
+              <option value="Hyundai i10 Automatique">Hyundai i10 Automatique — 350 MAD/j</option>
+              <option value="Dacia Sandero">Dacia Sandero — 300 MAD/j</option>
+              <option value="Dacia Logan">Dacia Logan — 300 MAD/j</option>
+            </select>
+          </div>
+
+          <!-- Dates -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-start">Date de début <span class="req">*</span></label>
+              <input type="date" id="res-start" name="start" required />
+            </div>
+            <div class="form-group">
+              <label for="res-end">Date de fin <span class="req">*</span></label>
+              <input type="date" id="res-end" name="end" required />
+            </div>
+          </div>
+
+          <!-- Lieu de prise en charge -->
+          <div class="form-group">
+            <label for="res-location">Lieu de prise en charge <span class="req">*</span></label>
+            <input type="text" id="res-location" name="location" placeholder="Ex : Aéroport Casablanca, hôtel, adresse…" required />
+          </div>
+
+          <!-- Message optionnel -->
+          <div class="form-group">
+            <label for="res-message">Message (optionnel)</label>
+            <textarea id="res-message" name="message" rows="3" placeholder="Informations complémentaires, demandes spéciales…"></textarea>
+          </div>
+
+          <!-- Récap prix estimé -->
+          <div class="res-form__recap" id="priceRecap" style="display:none;">
+            <span id="recapText"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.535 5.876L0 24l6.29-1.516A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.974-1.352l-.357-.212-3.705.893.935-3.6-.232-.37A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+            Confirmer via WhatsApp
+          </button>
+
+          <p class="res-form__note">Aucun paiement en ligne — confirmation gratuite, sans engagement.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="section__tag">Nous joindre</span>
+        <h2 class="section__title">Contact</h2>
+      </div>
+      <!-- Bannière titre section -->
+      <div class="contact__banner fade-in">
+        <span class="contact__banner-title">LOCATION DE VOITURES</span>
+        <div class="contact__banner-cities">
+          <span>📍 Essaouira 🇲🇦</span>
+          <span class="contact__sep">—</span>
+          <span>📍 Casablanca 🇲🇦</span>
+        </div>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__card fade-in">
+          <div class="contact__icon">💬</div>
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/212631137474" target="_blank" rel="noopener">+212 6 31 13 74 74</a>
+          <span>Réponse en moins de 15 min</span>
+        </div>
+        <div class="contact__card fade-in">
+          <div class="contact__icon">🌐</div>
+          <h3>Site web</h3>
+          <a href="https://www.buildingcar.ma" target="_blank" rel="noopener">www.buildingcar.ma</a>
+          <span>Informations & réservation</span>
+        </div>
+        <div class="contact__card fade-in">
+          <div class="contact__icon">📍</div>
+          <h3>Adresse</h3>
+          <span>Av. Al Aqaba</span>
+          <span>Essaouira 44000</span>
+        </div>
+        <div class="contact__card fade-in">
+          <div class="contact__icon">🕐</div>
+          <h3>Disponibilité</h3>
+          <span>7j/7 — 24h/24</span>
+          <span>Livraison nationale</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo.png" alt="Building Car" class="footer__logo" />
+        <p>Location de voitures de prestige au Maroc.</p>
+      </div>
+      <div class="footer__nav">
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#vehicules">Nos voitures</a></li>
+          <li><a href="#reservation">Réserver</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <a href="https://wa.me/212631137474" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.535 5.876L0 24l6.29-1.516A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.974-1.352l-.357-.212-3.705.893.935-3.6-.232-.37A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/buildingcar.ma?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://facebook.com/buildingcar" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 Building Car — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- ========== BOUTON WHATSAPP FLOTTANT ========== -->
+  <a href="https://wa.me/212631137474" class="wa-float" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.535 5.876L0 24l6.29-1.516A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.974-1.352l-.357-.212-3.705.893.935-3.6-.232-.37A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
+    </svg>
+    <span class="wa-float__label">Discuter</span>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

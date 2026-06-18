@@ -1,9 +1,11 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=$HOME/public_html/
-    - /bin/mkdir -p $DEPLOYPATH/images
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
-    - /bin/cp script.js $DEPLOYPATH
-    - /bin/cp -R images/ $DEPLOYPATH/images/
+    - /bin/rm -f $HOME/public_html/index.php
+    - /bin/rm -f $HOME/public_html/index.htm
+    - /bin/rm -f $HOME/public_html/default.html
+    - /bin/mkdir -p $HOME/public_html/images
+    - /bin/cp index.html $HOME/public_html/
+    - /bin/cp style.css $HOME/public_html/
+    - /bin/cp script.js $HOME/public_html/
+    - /bin/cp -R images/ $HOME/public_html/images/

@@ -33,27 +33,30 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
-
-  /* Fond fixe G63 sur tout le site */
-  background-image: url('images/g63-bg.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-/* overlay sombre semi-transparent sur tout le contenu (sauf hero qui a le sien) */
+/* Fond fixe G63 — pseudo-élément fixed compatible mobile */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url('images/g63-bg.jpg') center / cover no-repeat;
+  pointer-events: none;
+}
+
+/* overlay sombre semi-transparent */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background: linear-gradient(160deg, rgba(6,6,12,0.55) 0%, rgba(6,6,12,0.38) 100%);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 
-/* tout le contenu au-dessus de l'overlay */
-body > * { position: relative; z-index: 1; }
+/* contenu au-dessus des pseudo-éléments (z-index négatifs) */
+body > * { position: relative; }
 
 img { max-width: 100%; display: block; }
 a  { text-decoration: none; color: inherit; }

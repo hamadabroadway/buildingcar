@@ -4,8 +4,9 @@ deployment:
     - /bin/rm -f $HOME/public_html/index.php
     - /bin/rm -f $HOME/public_html/index.htm
     - /bin/rm -f $HOME/public_html/default.html
-    - /bin/mkdir -p $HOME/public_html/images
+    - /bin/rm -rf $HOME/public_html/images
     - /bin/cp index.html $HOME/public_html/
     - /bin/cp style.css $HOME/public_html/
     - /bin/cp script.js $HOME/public_html/
-    - /bin/cp -R images/ $HOME/public_html/images/
+    - /bin/cp .htaccess $HOME/public_html/
+    - /bin/cp -R images $HOME/public_html/
